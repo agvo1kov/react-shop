@@ -1,33 +1,62 @@
-.App {
-  text-align: center;
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  font-size: 32pt;
+  padding-left: 20px;
+  padding-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.good {
+  width: 250px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+
+  margin: 10px;
+  padding: 0 10px;
+  padding-top: 10px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: all 200ms ease-out;
+}
+.good:hover {
+  transition: all 100ms ease-out;
+  transform: scale(1.03);
+}
+
+.good img {
+  height: 150px;
+}
+
+.good .title {
+  font-size: 14pt;
+}
+
+.good .price {
+  font-size: 21pt;
+  width: 100%;
+  color: #ff3b30;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 15pt;
+  margin-left: 20px;
 }
