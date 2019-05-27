@@ -6,21 +6,31 @@
 
 header {
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-right: 30px;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .logo {
   font-size: 32pt;
   padding-left: 20px;
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .catalog {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 .good {
+  box-sizing: border-box;
   width: 250px;
   display: flex;
   flex-flow: column nowrap;
@@ -31,14 +41,30 @@ header {
   margin: 10px;
   padding: 0 10px;
   padding-top: 10px;
+  padding-bottom: 10px;
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   transition: all 200ms ease-out;
+  border: 3px solid white;
 }
-.good:hover {
+.good:hover:not(.selected) {
   transition: all 100ms ease-out;
   transform: scale(1.03);
+}
+.good.selected {
+  transition: all 100ms ease-out;
+  border-color: #ff3b30;
+}
+
+.booked .good {
+  display: none;
+}
+.booked .good.selected {
+  display: block;
+  border-color: white;
+  transition: all 100ms ease;
+  cursor: default;
 }
 
 .good img {
@@ -53,10 +79,38 @@ header {
   font-size: 21pt;
   width: 100%;
   color: #ff3b30;
+  text-align: right;
 }
 
 h3 {
   font-weight: normal;
-  font-size: 15pt;
+  font-size: 19pt;
+  margin: 20px 0 10px;
+  text-align: center;
+}
+
+.order-box {
+  display: flex;
+  align-items: baseline;
+}
+
+.book {
   margin-left: 20px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 13pt;
+  background: #ff3b30;
+  border-radius: 100px;
+
+  cursor: pointer;
+  user-select: none;
+  transition: all 100ms ease-in-out;
+}
+.book:hover {
+  transform: scale(1.1);
+  transition: all 100ms ease-in;
+}
+.book:active {
+  transform: scale(1.1) translateY(2px);
+  transition: all 100ms ease-in;
 }

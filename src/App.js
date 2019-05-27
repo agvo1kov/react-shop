@@ -1,17 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Catalog from './Catalog'
+import Catalog from './Catalog';
+import Header from './Header';
+
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+import { rootReducer } from "./store/reducers";
+
+const store = createStore(rootReducer);
 
 function App() {
   return (
     <div className="App">
-        <header className="App-header">
-            <div className="logo">Webstore</div>
-            <div className="cart">В корзине </div>
-        </header>
-        <h3>Выберите товары:</h3>
-        <Catalog />
+        <Provider store={store}>
+            <header className="App-header">
+                <div className="logo">Webstore</div>
+                <Header />
+            </header>
+            <Catalog />
+        </Provider>
     </div>
   );
 }
